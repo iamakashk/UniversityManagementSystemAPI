@@ -25,18 +25,18 @@ public class StudentService {
 	}
 
 	@Transactional
-	public void addCountry(Student student) {
+	public void addStudent(Student student) {
 		studentsDao.addStudents(student);
 	}
 
 	@Transactional
-	public void updateCountry(Student student) {
+	public void updateStudent(Student student) {
 		studentsDao.updateStudents(student);
 
 	}
 
 	@Transactional
-	public void deleteCountry(int id) {
+	public void deleteStudent(int id) {
 		studentsDao.deleteStudents(id);
 	}
 }

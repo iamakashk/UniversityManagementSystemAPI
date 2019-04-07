@@ -38,18 +38,18 @@ public class StudentController {
 		System.out.println(student.getCourses());
 		System.out.println(student.getStudent_first_name());
 		System.out.print(student.getStudent_last_name());
-		studentService.addCountry(student);
+		studentService.addStudent(student);
 		
 	}
 
 	@RequestMapping(value = "/updateStudent/{id}", method = RequestMethod.PUT, headers = "Accept=application/json")
 	public void updateCountry(@RequestBody Student student,@PathVariable int id) {
 		student.setStudent_id(id);
-		studentService.updateCountry(student);
+		studentService.updateStudent(student);
 	}
 
 	@RequestMapping(value = "/deleteStudent/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
 	public void deleteCountry(@PathVariable("id") int id) {
-		studentService.deleteCountry(id);		
+		studentService.deleteStudent(id);		
 	}
 }

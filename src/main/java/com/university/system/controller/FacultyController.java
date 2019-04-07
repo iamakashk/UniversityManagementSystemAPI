@@ -3,6 +3,7 @@ package com.university.system.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import com.university.system.model.Student;
 import com.university.system.service.FacultyService;
 import com.university.system.service.StudentService;
 
+@CrossOrigin(origins="http://localhost:9955")
 @RestController
 public class FacultyController {
 
@@ -34,13 +36,13 @@ public class FacultyController {
 	}
 
 	@RequestMapping(value = "/addFaculty", method = RequestMethod.POST, headers = "Accept=application/json")
-	public void addCountry(@RequestBody Faculty faculty) {	
+	public void addFaculty(@RequestBody Faculty faculty) {	
 		facultyService.addFaculty(faculty);
 		
 	}
 
 	@RequestMapping(value = "/updateFaculty/{id}", method = RequestMethod.PUT, headers = "Accept=application/json")
-	public void updateCountry(@RequestBody Faculty faculty,@PathVariable int id) {
+	public void updateFaculty(@RequestBody Faculty faculty,@PathVariable int id) {
 		faculty.setFaculty_id(id);
 		facultyService.updateFaculty(faculty);
 	}
